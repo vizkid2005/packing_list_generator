@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container mx-auto mt-24">
+            <div class="container mx-auto border-2 flex">
+                <div class="w-1/2 pl-8">
+                    <h1 class="text-3xl font-bold">{{name}}</h1>
+                    <h2 class="text-xl">ITS: {{its}}</h2>
+                    <h3 class="text-l">Phone: {{phone}}</h3>
+                    <h3 class="text-l">City: {{city}}</h3>
+                </div>
+                <div class="w-1/2 flex justify-end">
+                    <img src="logo.png" class="h-32" alt="Placeholder Image">
+                </div>
+            </div>
+            <div class="container mx-auto border-2 p-16">
+                <ol class="list-decimal">
+                    {% for item in items %}
+                        <li class="text-2xl">{{ item }}</li>
+                    {% endfor %}
+                </ol>
+            </div>
+            <div class="container mx-auto border-2 p-16">
+                <span>Note: You have committed to <b>{{contribution}}</b> CAD"</span>
+                <p>Please Etransfer to </p>
+        </div>
+        
+    </body>
+</html>
