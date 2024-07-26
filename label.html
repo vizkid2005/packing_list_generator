@@ -1,31 +1,41 @@
 <html>
-    <head>
-        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-    </head>
-    <body>
-        <div class="container mx-auto mt-24">
-            <div class="container mx-auto border-2 flex">
-                <div class="w-1/2 pl-8">
-                    <h1 class="text-3xl font-bold">{{name}}</h1>
-                    <h2 class="text-xl">ITS: {{its}}</h2>
-                    <h3 class="text-l">Phone: {{phone}}</h3>
-                    <h3 class="text-l">City: {{city}}</h3>
-                </div>
-                <div class="w-1/2 flex justify-end">
-                    <img src="logo.png" class="h-32" alt="Placeholder Image">
-                </div>
+
+<head>
+    <link href="/Users/huzed/p/print_fmb_labels/generated/output.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container mx-auto mt-24">
+        <div class="container mx-auto border-2 flex justify-between">
+            <div class="pl-8">
+                <h1 class="text-3xl font-bold">{{name}}</h1>
+                <h2 class="text-xl">ITS: {{its}}</h2>
+                <h3 class="text-l">Phone: {{phone}}</h3>
+                <h3 class="text-l">City: {{city}}</h3>
             </div>
-            <div class="container mx-auto border-2 p-16">
-                <ol class="list-decimal">
-                    {% for item in items %}
-                        <li class="text-2xl">{{ item }}</li>
-                    {% endfor %}
-                </ol>
+            <div class="flex justify-end">
+                <img src="/Users/huzed/p/print_fmb_labels/generated/logo.png" class="h-32" alt="Placeholder Image">
             </div>
-            <div class="container mx-auto border-2 p-16">
-                <span>Note: You have committed to <b>{{contribution}}</b> CAD"</span>
-                <p>Please Etransfer to </p>
         </div>
-        
-    </body>
+        <div class="container mx-auto border-2 p-16">
+            <ol class="list-decimal">
+                {% for item in items %}
+                <li class="text-2xl">{{ item }}</li>
+                {% endfor %}
+            </ol>
+        </div>
+        <div class="container mx-auto border-2 p-4">
+            <span>Note: You have committed to <b>$ {{contribution}}</b> CAD for Sihori Ashiya and LQ Honey 1445</span>
+            <p>Please Etransfer to <b>pay@vancouverjamaat.ca</b> as soon as possible</p>
+            <span>Memo: "{{its}} sihori"</span>
+            <p>Write the memo exactly as given inside the quotes for our automated system to validate your contribution
+            </p>
+            <br />
+            <p>You are receiving this barakat from Aqa Maula TUS, If you haven't done a niyyat for contribution, we urge
+                you to support your local FMB organization</p>
+        </div>
+    </div>
+
+</body>
+
 </html>

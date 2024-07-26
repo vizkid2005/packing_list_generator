@@ -7,6 +7,9 @@ name = "pypi"
 jinja2 = "*"
 pandas = "*"
 openpyxl = "*"
+weasyprint = "*"
+xhtml2pdf = "*"
+wkhtmltopdf = "*"
 
 [dev-packages]
 

@@ -1,5 +1,6 @@
 import pandas as pd
 import jinja2 as j2
+from weasyprint import HTML
 
 df = pd.read_excel("purchase_list.xlsx") # Read the purchase list
 grocery_list = {}
@@ -64,9 +65,12 @@ for index, row in df.iterrows(): # Iterate through the rows
     update_grocery_list(row.iloc[24] + " Sugar")
     
     html = template.render(name=name, its=its, phone=phone, city=city, items=items, contribution=contribution) # Render the template with the row data
-    with open(f"purchase_{index+1}.html", "w") as f: # Write the HTML to a file
+    with open(f"generated/purchase_{index+1}_{name}.html", "w") as f: # Write the HTML to a file
         f.write(html)
-    
-    break # Remove this line to generate all the labels
+    pdfhtml = HTML(filename=f"generated/purchase_{index+1}_{name}.html").write_pdf(f"pdfs/purchase_{index+1}_{name}.pdf") # Convert the HTML to PDF
+
 
 print(grocery_list) # Print the grocery list
+
+
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILBPhJbHbp8r5YNG6FS5SFDnzeinWYMd+FFl98iCKqy9 vizkid2005@gmail.com
