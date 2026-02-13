@@ -1,4 +1,11 @@
 {
+  "name": "packing-list-generator",
+  "version": "1.0.0",
+  "description": "Generate packing lists and labels from survey responses",
+  "scripts": {
+    "build:css": "tailwindcss -i input.css -o output.css",
+    "watch:css": "tailwindcss -i input.css -o output.css --watch"
+  },
   "devDependencies": {
     "tailwindcss": "^3.4.1"
   }
